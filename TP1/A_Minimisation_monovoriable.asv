@@ -1,0 +1,15 @@
+clc
+%% Definition de la fonction f (handl)
+f = @(x) x-1-log(x);
+%% b 
+t = 0.1;
+e = t/200 ;
+[x_min,n] = Dichotomie(0, 2 , t, e)
+
+%% d) comparaison entre les deux methodes:
+options = optimset('TolFun',t);
+%[X_min,FVAL,EXITFLAG,OUTPUT]=fminbnd(@(x) f(x),0,1,options)
+
+%% e) La difference entre f(x) et ff(x):
+x = [0.2:0.001:1.2];
+plot(f,x);
